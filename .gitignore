@@ -1,0 +1,45 @@
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor and IDE settings
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.swo
+*~
+
+# Microsoft Office temporary and lock files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Logs, caches, and temporary output
+*.log
+*.tmp
+*.temp
+.cache/
+tmp/
+temp/
+
+# Local environment and secret files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated exports and backups
+exports/
+backups/
+*.bak
+
+# Keep approved project workbooks and fictional sample CSV files tracked.
+!change-management/*.xlsx
+!business-processes/*.xlsx
+!security/*.xlsx
+!validation-testing/*.xlsx
+!reports/*.xlsx
+!sample-data/*.csv
