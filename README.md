@@ -103,4 +103,6 @@ git diff --check
 
 - Day 1: repository initialized, structure created, README and usage guidance added.
 - Day 2: requirements, payroll component overview, fictional organization, and sample payroll scenario documented.
-- Later deliverables remain placeholders for future project tasks.
+- Day 3: proposed earning and deduction codes, eligibility, calculations, effective dates, approval assumptions, and validation requirements documented.
+- Day 4: proposed pay groups, sample payroll calendars, tax-rule governance, and fictional CSV sample data documented.
+- Later governance, security, testing, workbook, and reporting deliverables remain placeholders for future project tasks.
