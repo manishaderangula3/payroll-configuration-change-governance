@@ -105,4 +105,6 @@ git diff --check
 - Day 2: requirements, payroll component overview, fictional organization, and sample payroll scenario documented.
 - Day 3: proposed earning and deduction codes, eligibility, calculations, effective dates, approval assumptions, and validation requirements documented.
 - Day 4: proposed pay groups, sample payroll calendars, tax-rule governance, and fictional CSV sample data documented.
+- Day 5: proposed payroll configuration change framework, operating procedure, control gates, and Mermaid process flow documented.
+- Day 6: standard change request template, mandatory-field rules, approval routing, testing, implementation, verification, and incomplete-request handling documented.
 - Later governance, security, testing, workbook, and reporting deliverables remain placeholders for future project tasks.
