@@ -107,4 +107,8 @@ git diff --check
 - Day 4: proposed pay groups, sample payroll calendars, tax-rule governance, and fictional CSV sample data documented.
 - Day 5: proposed payroll configuration change framework, operating procedure, control gates, and Mermaid process flow documented.
 - Day 6: standard change request template, mandatory-field rules, approval routing, testing, implementation, verification, and incomplete-request handling documented.
-- Later governance, security, testing, workbook, and reporting deliverables remain placeholders for future project tasks.
+- Day 7: formatted Excel change log with filters, dropdowns, date fields, and fictional usage examples created.
+- Day 8: impact assessment, rollback triggers, recovery ownership, verification, and escalation procedures documented.
+- Day 9: proposed security roles, access matrix, access-control principles, segregation of duties, and recertification expectations documented.
+- Day 10: approval matrix, authorized approvers, exceptions, escalation paths, artifact alignment, and controlled Confluence documentation approach completed.
+- Later testing and reporting deliverables remain placeholders for future project tasks.
