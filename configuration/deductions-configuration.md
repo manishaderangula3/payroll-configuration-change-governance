@@ -51,6 +51,28 @@ At minimum, validate:
 - Taxable wages, net pay, accounting, payslip, remittance, and reporting.
 - Reconciliation to fictional elections, orders, agreements, and recipient totals.
 
+## Sample deductions data dictionary
+
+The fictional [deductions CSV](../sample-data/sample-deductions.csv) uses one row per proposed deduction code.
+
+| Field | Required | Meaning and permitted format |
+| --- | --- | --- |
+| `deduction_code` | Yes | Unique stable identifier matching this configuration document, such as `MED_EE`. |
+| `deduction_name` | Yes | Reader-friendly deduction name. |
+| `category` | Yes | Controlled value: `Benefit`, `Retirement`, `Statutory order`, `Voluntary`, or `Voluntary repayment`. |
+| `effective_start` | Yes | Start date in ISO `YYYY-MM-DD` format. |
+| `effective_end` | No | Optional end date in ISO format; must not precede the start date. |
+| `pay_group` | Yes | Existing proposed pay-group code from [pay groups configuration](pay-groups-configuration.md). |
+| `eligibility` | Yes | Fictional election, order, agreement, or population rule. |
+| `calculation_method` | Yes | Approved basis for calculating the deduction. |
+| `rate_or_amount` | Yes | Numeric amount or percentage interpreted with `unit`. |
+| `unit` | Yes | `USD` or `Percent`. |
+| `frequency` | Yes | Proposed deduction cadence. |
+| `assumed_tax_treatment` | Yes | Fictional pre-tax or post-tax assumption pending approval. |
+| `priority_or_limit` | Yes | Priority, statutory limitation, plan limit, or collection boundary. |
+| `status` | Yes | Controlled value `Proposed` until formally validated and approved. |
+| `approval_required` | Yes | Roles whose approval is required before implementation. |
+
 ## Required approvals and unresolved assumptions
 
 The sample data uses simplified fictional rates and balances. Pre-tax treatment, annual limits, protected-pay rules, deduction priority, arrears, and legal-order calculations require approval from the appropriate business, payroll, benefits, legal, tax, or plan owner.

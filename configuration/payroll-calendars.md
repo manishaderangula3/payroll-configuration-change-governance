@@ -45,6 +45,28 @@ These entries are fictional planning examples for Northstar Services Group. Date
 - Downstream time, benefits, bank, accounting, and reporting schedules must align.
 - Sample dates must not be treated as operational dates until the payroll owner approves them.
 
+## Sample payroll calendar data dictionary
+
+The fictional [payroll calendar CSV](../sample-data/sample-payroll-calendar.csv) uses one row per proposed pay period.
+
+| Field | Required | Meaning and permitted format |
+| --- | --- | --- |
+| `pay_group_code` | Yes | Existing proposed pay-group code, such as `NSG_BIWEEKLY_US`. |
+| `calendar_code` | Yes | Stable annual calendar identifier associated with the pay group. |
+| `frequency` | Yes | Controlled value `Biweekly` or `Semimonthly` for the regular sample calendars. |
+| `period_number` | Yes | Positive integer unique within a calendar code. |
+| `period_start` | Yes | Inclusive period start in ISO `YYYY-MM-DD` format. |
+| `period_end` | Yes | Inclusive period end in ISO format; must not precede the start. |
+| `input_cutoff` | Yes | Proposed input deadline in ISO format. |
+| `calculation_date` | Yes | Proposed payroll calculation date in ISO format. |
+| `audit_date` | Yes | Proposed payroll review date in ISO format. |
+| `payment_date` | Yes | Proposed worker payment date in ISO format. |
+| `adjustment_reason` | Yes | Reason for nonstandard timing, or `None in fictional schedule`. |
+| `status` | Yes | Controlled value `Proposed` until formally validated and approved. |
+| `approval_required` | Yes | Roles whose approval is required before publication or use. |
+
+Calendar validation checks unique `calendar_code` plus `period_number`, valid ISO dates, sequential non-overlapping periods within each calendar, and matching pay-group references.
+
 ## Related documents
 
 - [Pay group definitions](pay-groups-configuration.md)

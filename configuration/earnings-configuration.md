@@ -53,6 +53,28 @@ At minimum, validate:
 - Reversal, correction, and rollback behavior.
 - Reconciliation of input totals to calculated payroll totals.
 
+## Sample earnings data dictionary
+
+The fictional [earnings CSV](../sample-data/sample-earnings.csv) uses one row per proposed earning code.
+
+| Field | Required | Meaning and permitted format |
+| --- | --- | --- |
+| `earning_code` | Yes | Unique stable identifier matching this configuration document, such as `HOME_STIP`. |
+| `earning_name` | Yes | Reader-friendly earning name. |
+| `category` | Yes | Controlled value: `Regular`, `Overtime`, `Supplemental`, `Allowance`, or `Reimbursement`. |
+| `effective_start` | Yes | Start date in ISO `YYYY-MM-DD` format. |
+| `effective_end` | No | Optional end date in ISO format; must not precede the start date. |
+| `pay_group` | Yes | Existing proposed pay-group code from [pay groups configuration](pay-groups-configuration.md). |
+| `eligibility` | Yes | Fictional population rule stated in plain language. |
+| `calculation_method` | Yes | Approved basis for calculating the earning. |
+| `rate_or_amount` | Yes | Numeric rate, amount, or multiplier interpreted with `currency` and `frequency`. |
+| `currency` | Yes | `USD` for monetary amounts or `Multiplier` for the overtime factor. |
+| `frequency` | Yes | Calculation cadence or basis, such as `Per hour` or `Per pay period`. |
+| `assumed_taxable` | Yes | Fictional tax assumption pending qualified approval. |
+| `overtime_inclusion` | Yes | Proposed overtime-base treatment or `Not applicable`. |
+| `status` | Yes | Controlled value `Proposed` until formally validated and approved. |
+| `approval_required` | Yes | Roles whose approval is required before implementation. |
+
 ## Required approvals and unresolved assumptions
 
 The examples assume USD payroll and the fictional NSG organization. Taxability, overtime inclusion, proration, retroactivity, and accounting treatment are not final. A qualified payroll or business owner must approve them, and a qualified tax or compliance owner must review tax-related decisions.

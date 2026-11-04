@@ -111,4 +111,6 @@ git diff --check
 - Day 8: impact assessment, rollback triggers, recovery ownership, verification, and escalation procedures documented.
 - Day 9: proposed security roles, access matrix, access-control principles, segregation of duties, and recertification expectations documented.
 - Day 10: approval matrix, authorized approvers, exceptions, escalation paths, artifact alignment, and controlled Confluence documentation approach completed.
-- Later testing and reporting deliverables remain placeholders for future project tasks.
+- Validation package: test scope, responsibilities, environment requirements, entry and exit criteria, evidence rules, defect severity, and 24 fictional test cases completed.
+- Sample data: earnings, deductions, and payroll calendar CSVs validated for required fields, unique identifiers, ISO dates, and consistent pay-group references; field dictionaries added to the configuration guides.
+- Remaining reporting deliverables remain placeholders for future project tasks.
