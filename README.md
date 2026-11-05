@@ -113,4 +113,6 @@ git diff --check
 - Day 10: approval matrix, authorized approvers, exceptions, escalation paths, artifact alignment, and controlled Confluence documentation approach completed.
 - Validation package: test scope, responsibilities, environment requirements, entry and exit criteria, evidence rules, defect severity, and 24 fictional test cases completed.
 - Sample data: earnings, deductions, and payroll calendar CSVs validated for required fields, unique identifiers, ISO dates, and consistent pay-group references; field dictionaries added to the configuration guides.
+- Day 14: payroll validation checklist and formatted defect tracker completed with consistent test and retest statuses.
+- Day 15: fictional `PCR-2027-001` stipend change documented from request through simulated testing, implementation decision, audit logging, closure, gaps, and recommended improvements.
 - Remaining reporting deliverables remain placeholders for future project tasks.
