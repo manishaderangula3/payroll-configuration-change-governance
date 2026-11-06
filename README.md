@@ -115,4 +115,6 @@ git diff --check
 - Sample data: earnings, deductions, and payroll calendar CSVs validated for required fields, unique identifiers, ISO dates, and consistent pay-group references; field dictionaries added to the configuration guides.
 - Day 14: payroll validation checklist and formatted defect tracker completed with consistent test and retest statuses.
 - Day 15: fictional `PCR-2027-001` stipend change documented from request through simulated testing, implementation decision, audit logging, closure, gaps, and recommended improvements.
+- Day 16: formula-driven payroll change summary report completed with change, approval, implementation, defect, and overdue-action reporting.
+- Day 17: payroll audit checklist completed with evidence ownership, artifact mapping, retention considerations, and access restrictions.
 - Remaining reporting deliverables remain placeholders for future project tasks.
