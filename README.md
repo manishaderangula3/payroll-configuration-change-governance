@@ -1,121 +1,151 @@
 # Payroll Configuration Change Governance
 
-## Project purpose
+A documentation-first framework for requesting, assessing, approving, testing, implementing, verifying, and auditing payroll configuration changes. The project uses a fictional organization and fictional data to demonstrate governance controls without representing a live Workday tenant.
 
-This repository provides a documentation-first governance framework for planning, reviewing, testing, approving, and auditing payroll configuration changes. It is designed as a portfolio and process-design project built around a fictional organization and a representative payroll scenario.
+> **Simulation notice:** Nothing in this repository proves that a setting was configured, tested, or deployed in Workday. All people, payroll records, approvals, evidence references, test outcomes, and defects are fictional or simulated unless an authorized organization replaces them with controlled evidence.
 
-> **Important:** This repository does not contain an exported Workday tenant configuration and does not prove that any setting has been deployed in Workday. All configuration examples are proposed designs for documentation, governance, and testing purposes.
+## Project overview
 
-## Objectives
+Payroll configuration changes can affect gross-to-net calculations, taxes, accounting, integrations, reporting, security, and employee experience. This repository brings the supporting governance artifacts into one traceable package.
 
-- Define a consistent process for requesting and evaluating payroll configuration changes.
-- Document the business purpose of key payroll components, including earnings, deductions, pay groups, calendars, and tax rules.
-- Establish approval, security, segregation-of-duties, testing, rollback, and audit expectations.
-- Provide reusable templates, matrices, checklists, test artifacts, and sample data.
-- Demonstrate traceability from a business requirement through approval, validation, deployment planning, and post-change review.
+The reference organization is **Northstar Services Group (NSG)**, a fictional United States professional-services company. The main scenario proposes a taxable home-office stipend and follows it from business request through impact review, approval, simulated testing, implementation decision, verification, audit logging, and closure.
+
+The project objectives are to:
+
+- Define a consistent payroll configuration change lifecycle.
+- Document proposed earnings, deductions, pay groups, calendars, and tax-rule designs.
+- Establish approval, access, segregation-of-duties, testing, rollback, and audit controls.
+- Provide reusable templates, matrices, checklists, workbooks, and fictional sample data.
+- Demonstrate traceability among requirements, configuration design, approvals, tests, defects, evidence, and closure.
+- Clearly separate proposed documentation and simulated results from live Workday activity.
+
+See the [project overview](docs/project-overview.md) for the full scope, stakeholders, assumptions, and fictional scenario.
 
 ## Scope
 
-The project covers the governance and documentation of proposed payroll configuration changes. It includes:
+### Included
 
 - Payroll configuration design documentation.
-- Change intake, impact analysis, approval, and rollback planning.
-- Business-process and approval-matrix design.
-- Security-role and segregation-of-duties guidance.
-- Test planning, payroll validation, defect tracking, and audit evidence.
-- Fictional sample data and reporting templates.
+- Change intake, impact assessment, approval, implementation, verification, and rollback planning.
+- Security roles, access boundaries, and segregation-of-duties controls.
+- Test planning, test cases, payroll validation, defect tracking, and evidence requirements.
+- Fictional CSV sample data and Excel-compatible governance workbooks.
+- Management reporting, audit review, project outcomes, and release documentation.
 
-The project does not include:
+### Not included
 
-- Access to or modification of a production Workday tenant.
-- Real employee, payroll, tax, banking, or personally identifiable information.
-- Workday integrations, production migration, or payroll execution.
-- Legal, tax, accounting, or compliance advice.
+- Access to or modification of a Workday tenant.
+- Production payroll processing, migration, or employee self-service activity.
+- Real employee, payroll, banking, tax, credential, or personally identifiable information.
+- Tenant-specific configuration instructions or proof of Workday functionality.
+- Legal, tax, accounting, payroll, privacy, records-retention, or compliance advice.
 
-## Fictional business context
+## Governance workflow
 
-The documentation uses **Northstar Services Group (NSG)**, a fictional United States professional-services company, as its reference organization. NSG has approximately 250 workers across New York, New Jersey, and Pennsylvania and runs a biweekly payroll. The sample scenario introduces a proposed taxable home-office stipend and follows that change through governance, configuration design, security review, testing, approval, and rollback planning.
+```mermaid
+flowchart TD
+    A[Business need] --> B[Submit change request]
+    B --> C{Request complete?}
+    C -- No --> B
+    C -- Yes --> D[Assess impact and risk]
+    D --> E[Approve build and testing]
+    E --> F[Document proposed configuration]
+    F --> G[Execute authorized or simulated tests]
+    G --> H{Acceptance criteria met?}
+    H -- No --> I[Log defect and revise design]
+    I --> F
+    H -- Yes --> J[Approve implementation decision]
+    J --> K[Implement only in an authorized environment]
+    K --> L[Verify and reconcile independently]
+    L --> M{Verification successful?}
+    M -- No --> N[Contain issue and assess rollback]
+    N --> K
+    M -- Yes --> O[Close change and retain evidence]
+```
 
-See [Project Overview](docs/project-overview.md) for the complete assumptions and scenario.
+The diagram represents the proposed lifecycle. It is not an implemented Workday business process. See the detailed [process flow](business-processes/process-flow.md), [business-process framework](docs/business-process-framework.md), and [change-governance procedure](docs/change-governance-procedure.md).
 
-## Tools and formats
+## Completed deliverables
 
-- **Git and GitHub** for version control and change history.
-- **Markdown** for governance procedures and configuration documentation.
-- **Microsoft Excel-compatible workbooks** for matrices, logs, test cases, and reporting templates.
-- **CSV** for fictional sample data.
-- **Workday Payroll terminology** as a conceptual reference; no tenant connection is included.
-
-## Planned deliverables
-
-| Area | Planned output |
+| Area | Deliverables |
 | --- | --- |
-| Project documentation | Project overview, payroll configuration guide, process framework, security overview, and governance procedure |
-| Configuration | Proposed earnings, deductions, pay groups, payroll calendars, and tax-rule documentation |
-| Change management | Request template, approval workflow, change log, impact assessment, and rollback procedure |
-| Business processes | Payroll change process, approval matrix, and process flow |
-| Security | Role-permission matrix, access-control guidance, and segregation-of-duties rules |
-| Validation | Test plan, test cases, payroll validation checklist, and defect tracker |
-| Sample data | Fictional earnings, deductions, and payroll-calendar records |
-| Reporting | Change summary, audit checklist, and project outcomes |
+| Project documentation | [Project overview](docs/project-overview.md), [payroll configuration guide](docs/payroll-configuration-guide.md), [business-process framework](docs/business-process-framework.md), [security overview](docs/security-roles-and-access.md), and [change-governance procedure](docs/change-governance-procedure.md) |
+| Configuration | [Earnings](configuration/earnings-configuration.md), [deductions](configuration/deductions-configuration.md), [pay groups](configuration/pay-groups-configuration.md), [payroll calendars](configuration/payroll-calendars.md), and [tax rules](configuration/tax-rules-configuration.md) |
+| Change management | [Change request template](change-management/change-request-template.md), [fictional completed request](change-management/example-change-request-pcr-2027-001.md), [approval workflow](change-management/change-approval-workflow.md), [impact assessment](change-management/change-impact-assessment.md), [rollback procedure](change-management/rollback-procedure.md), and [change log](change-management/change-log.xlsx) |
+| Business processes | [Payroll change process](business-processes/payroll-change-process.md), [process flow](business-processes/process-flow.md), and [approval matrix](business-processes/approval-matrix.xlsx) |
+| Security | [Access-control guidance](security/access-control-guidelines.md), [segregation-of-duties guidance](security/segregation-of-duties.md), and [role-permission matrix](security/role-permission-matrix.xlsx) |
+| Validation | [Test plan](validation-testing/test-plan.md), [24 test cases](validation-testing/test-cases.xlsx), [payroll validation checklist](validation-testing/payroll-validation-checklist.md), and [defect tracker](validation-testing/defect-tracking.xlsx) |
+| Sample data | [Fictional earnings](sample-data/sample-earnings.csv), [deductions](sample-data/sample-deductions.csv), and [payroll calendars](sample-data/sample-payroll-calendar.csv) |
+| Reporting | [Change summary](reports/change-summary-template.xlsx), [payroll audit checklist](reports/payroll-audit-checklist.md), and [project outcomes and metrics](reports/project-outcomes.md) |
+| Release | [Draft v1.0.0 release notes](RELEASE_NOTES.md) and [screenshot evidence guidance](screenshots/README.md) |
 
-## Repository structure
+## Repository map
 
 ```text
 payroll-configuration-change-governance/
-|-- docs/                  # Project, payroll, governance, and security documentation
-|-- configuration/         # Proposed payroll configuration specifications
-|-- change-management/     # Change-control templates and logs
-|-- business-processes/    # Process documentation and approval design
-|-- security/              # Access and segregation-of-duties artifacts
-|-- validation-testing/    # Test plans, cases, checklists, and defects
-|-- sample-data/           # Fictional CSV data only
-|-- reports/               # Audit and outcome reporting artifacts
-`-- screenshots/           # Approved, sanitized supporting images
+|-- README.md
+|-- RELEASE_NOTES.md
+|-- docs/                  # Overview, payroll, process, security, and governance documents
+|-- configuration/         # Proposed configuration specifications
+|-- change-management/     # Request, approval, impact, rollback, and change-log artifacts
+|-- business-processes/    # Workflow, process flow, and approval matrix
+|-- security/              # Access controls, roles, and segregation of duties
+|-- validation-testing/    # Test plan, cases, checklist, and defect tracker
+|-- sample-data/           # Fictional CSV records only
+|-- reports/               # Summary, audit, and outcomes artifacts
+`-- screenshots/           # Sanitized screenshot guidance; no evidence images currently stored
 ```
 
-## Repository usage
+## Tools and formats
 
-1. Create a branch for each documentation or configuration proposal.
-2. Update the relevant artifact and include the business reason, owner, effective date, and supporting change-request reference.
-3. Never add production data, employee identifiers, credentials, tenant URLs, or confidential screenshots.
-4. Review changes for terminology, traceability, security impact, testing coverage, and rollback readiness.
-5. Use a pull request or equivalent review step before merging approved work.
-6. Preserve evidence in the relevant log, matrix, test file, or report.
+- **Git and GitHub:** version control, review history, and release tagging.
+- **Markdown and Mermaid:** governance documentation and process diagrams.
+- **Microsoft Excel-compatible workbooks:** logs, approval and security matrices, test cases, defects, and summary reporting.
+- **CSV:** fictional earning, deduction, and payroll-calendar records.
+- **Workday Payroll terminology:** conceptual business context only; the project has no tenant connection.
+
+## Usage instructions
+
+1. Read the [project overview](docs/project-overview.md) and [change-governance procedure](docs/change-governance-procedure.md).
+2. Copy the [change request template](change-management/change-request-template.md) and assign a unique `PCR-YYYY-NNN` identifier.
+3. Complete the impact assessment and determine the required approvers, testing scope, security review, and rollback owner.
+4. Update only the relevant proposed configuration document. Do not label an unverified setting as actual configuration.
+5. Record tests, evidence references, defects, approvals, implementation decisions, verification, and closure using the same change ID.
+6. Update the change log and summary report using fictional or authorized sanitized data only.
+7. Run the repository checks below, obtain peer review, and commit through the approved version-control process.
 
 Useful local checks:
 
-```bash
+```powershell
 git status
-git diff
 git diff --check
+git ls-files
+git log --oneline --decorate -10
 ```
 
-## Documentation conventions
+## Assumptions
 
-- **Proposed configuration** means a documented recommendation or example that has not been confirmed in a Workday tenant.
-- **Actual configuration** means a setting verified directly in an authorized tenant by an authorized administrator. No artifact in this repository should be labeled actual unless that verification is separately evidenced.
-- Dates should use the `YYYY-MM-DD` format.
-- Examples must use fictional organizations, workers, identifiers, and amounts.
-- Changes should be traceable to a request, approver, test result, and rollback decision.
+- NSG and every named person, worker, approver, identifier, amount, and evidence reference are fictional.
+- The sample scenario assumes a United States payroll with biweekly and semimonthly pay groups.
+- Example taxability, overtime, priority, limit, and jurisdictional statements require qualified approval before operational use.
+- Dates use `YYYY-MM-DD`, and cross-artifact change references use `PCR-YYYY-NNN`.
+- Proposed role and approval matrices require validation against an authoritative organization roster and delegated authority.
 
-## Current status
+## Limitations and live Workday distinction
 
-- Day 1: repository initialized, structure created, README and usage guidance added.
-- Day 2: requirements, payroll component overview, fictional organization, and sample payroll scenario documented.
-- Day 3: proposed earning and deduction codes, eligibility, calculations, effective dates, approval assumptions, and validation requirements documented.
-- Day 4: proposed pay groups, sample payroll calendars, tax-rule governance, and fictional CSV sample data documented.
-- Day 5: proposed payroll configuration change framework, operating procedure, control gates, and Mermaid process flow documented.
-- Day 6: standard change request template, mandatory-field rules, approval routing, testing, implementation, verification, and incomplete-request handling documented.
-- Day 7: formatted Excel change log with filters, dropdowns, date fields, and fictional usage examples created.
-- Day 8: impact assessment, rollback triggers, recovery ownership, verification, and escalation procedures documented.
-- Day 9: proposed security roles, access matrix, access-control principles, segregation of duties, and recertification expectations documented.
-- Day 10: approval matrix, authorized approvers, exceptions, escalation paths, artifact alignment, and controlled Confluence documentation approach completed.
-- Validation package: test scope, responsibilities, environment requirements, entry and exit criteria, evidence rules, defect severity, and 24 fictional test cases completed.
-- Sample data: earnings, deductions, and payroll calendar CSVs validated for required fields, unique identifiers, ISO dates, and consistent pay-group references; field dictionaries added to the configuration guides.
-- Day 14: payroll validation checklist and formatted defect tracker completed with consistent test and retest statuses.
-- Day 15: fictional `PCR-2027-001` stipend change documented from request through simulated testing, implementation decision, audit logging, closure, gaps, and recommended improvements.
-- Day 16: formula-driven payroll change summary report completed with change, approval, implementation, defect, and overdue-action reporting.
-- Day 17: payroll audit checklist completed with evidence ownership, artifact mapping, retention considerations, and access restrictions.
-- Day 18: measured project outcomes, governance observations, testing coverage, limitations, and potential enhancements documented.
-- Day 19: Markdown links, repository structure, six Excel workbooks, three CSV datasets, and cross-artifact identifiers reviewed; empty guidance files and legacy test-case change IDs resolved.
+This repository demonstrates documentation quality and control design. It does not establish that the controls operated effectively in production.
+
+- `Proposed` means documented for review but not verified in an authorized tenant.
+- `Simulated` means evaluated as a fictional walkthrough without authorized tenant execution.
+- `Not Executed` means no test result is claimed.
+- `Actual` or `Implemented` should be used for live activity only when authorized evidence supports the statement. Workbook examples may use implementation dates solely to demonstrate reporting logic and remain fictional.
+
+The workbooks do not replace a governed system of record, electronic approval platform, evidence repository, access-review system, or jurisdiction-specific professional review.
+
+## Quality review and release status
+
+The Day 19 review validated the original 35-file package: 25 Markdown files, 6 Excel workbooks, 3 CSV datasets, and `.gitignore`. It found no remaining broken relative links, CSV validation errors, workbook formula errors, or repository-structure discrepancies after corrections.
+
+Day 20 adds this final README and the draft release notes. The repository history was reviewed through commit `94fcf36`, and all pre-release deliverables were tracked before the Day 20 edits. The proposed release is `v1.0.0`; create the annotated tag only after the final README and release notes are reviewed and committed.
+
+See [release notes](RELEASE_NOTES.md) and [project outcomes and metrics](reports/project-outcomes.md) for the release summary, measured results, limitations, and future enhancements.
