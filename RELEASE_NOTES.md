@@ -1,12 +1,12 @@
 # Release Notes
 
-## v1.0.0 — Draft
+## v1.0.0
 
-**Prepared:** `2026-11-10`
+**Prepared:** `2026-11-11`
 
-**Status:** Ready for final review; not tagged or pushed
+**Status:** Prepared and tagged locally; not pushed or published
 
-This draft release packages the completed payroll configuration change-governance documentation for the fictional Northstar Services Group. It is a documentation and simulation release, not a Workday deployment.
+This release packages the completed payroll configuration change-governance documentation for the fictional Northstar Services Group. It is a documentation and simulation release, not a Workday deployment.
 
 ## Highlights
 
@@ -31,7 +31,7 @@ The Day 19 QA baseline covered 35 tracked files:
 
 The review confirmed working local relative links, expected repository folders, workbook sheets, formulas, dropdowns, filters, fictional example records, CSV headers, required fields, ISO dates, unique record keys, and pay-group references. It also standardized legacy test-case change references to `PCR-YYYY-NNN`.
 
-Day 20 adds this release note, increasing the intended release package to 36 tracked files after staging and commit.
+Day 20 added this release note, increasing the release package to 36 tracked files. Final Git and Markdown checks passed. An automated repository scan found no obvious private keys, passwords, access tokens, government identifiers, payment-card numbers, or bank-account data. The release owner remains responsible for the final organizational privacy and records-management review.
 
 ## Known limitations
 
@@ -43,11 +43,6 @@ Day 20 adds this release note, increasing the intended release package to 36 tra
 
 ## Release decision
 
-The proposed version is `v1.0.0`. Create an annotated `v1.0.0` tag only after:
+Version `v1.0.0` is prepared locally. The final README and release notes were reviewed, repository checks completed without errors, and the release documentation was committed before creating the annotated tag.
 
-1. The final README and these release notes receive review approval.
-2. Repository checks complete without errors.
-3. The Day 20 changes are committed to the intended branch.
-4. The release owner confirms that no confidential or production payroll information is present.
-
-No tag or remote push is included in the Day 20 preparation task.
+The `v1.0.0` tag and its final release commit remain local. No commit, tag, or GitHub Release was pushed or published as part of finalization.

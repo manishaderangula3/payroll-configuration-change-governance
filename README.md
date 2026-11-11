@@ -146,6 +146,6 @@ The workbooks do not replace a governed system of record, electronic approval pl
 
 The Day 19 review validated the original 35-file package: 25 Markdown files, 6 Excel workbooks, 3 CSV datasets, and `.gitignore`. It found no remaining broken relative links, CSV validation errors, workbook formula errors, or repository-structure discrepancies after corrections.
 
-Day 20 adds this final README and the draft release notes. The repository history was reviewed through commit `94fcf36`, and all pre-release deliverables were tracked before the Day 20 edits. The proposed release is `v1.0.0`; create the annotated tag only after the final README and release notes are reviewed and committed.
+Day 20 added this final README and the `v1.0.0` release notes. All 36 intended release files are tracked. The final documentation and confidentiality-pattern checks completed without errors, and the annotated `v1.0.0` tag was prepared locally. The final release commit and tag have not been pushed or published.
 
 See [release notes](RELEASE_NOTES.md) and [project outcomes and metrics](reports/project-outcomes.md) for the release summary, measured results, limitations, and future enhancements.
