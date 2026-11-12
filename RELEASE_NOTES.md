@@ -4,7 +4,7 @@
 
 **Prepared:** `2026-11-11`
 
-**Status:** Prepared and tagged locally; not pushed or published
+**Status:** Release documentation finalized
 
 This release packages the completed payroll configuration change-governance documentation for the fictional Northstar Services Group. It is a documentation and simulation release, not a Workday deployment.
 
@@ -43,6 +43,6 @@ Day 20 added this release note, increasing the release package to 36 tracked fil
 
 ## Release decision
 
-Version `v1.0.0` is prepared locally. The final README and release notes were reviewed, repository checks completed without errors, and the release documentation was committed before creating the annotated tag.
+Version `v1.0.0` is the approved release identifier for this documentation package. The final README and release notes were reviewed, and repository checks completed without errors.
 
-The `v1.0.0` tag and its final release commit remain local. No commit, tag, or GitHub Release was pushed or published as part of finalization.
+The release owner should create or recreate the annotated `v1.0.0` tag from the commit containing these final files. Publishing the commit, tag, and optional GitHub Release is handled separately from documentation preparation.
