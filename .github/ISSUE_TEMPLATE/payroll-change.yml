@@ -1,0 +1,72 @@
+name: Payroll configuration change
+description: Submit a governed payroll configuration change request.
+title: "[PCR] "
+labels: ["payroll-change", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: "Do not include real employee, payroll, credential, tax identifier, bank, or confidential tenant data."
+  - type: input
+    id: change_id
+    attributes:
+      label: Change ID
+      description: Use PCR-YYYY-NNN after assignment by the change coordinator.
+      placeholder: PCR-2027-001
+    validations:
+      required: true
+  - type: textarea
+    id: business_reason
+    attributes:
+      label: Business reason
+    validations:
+      required: true
+  - type: dropdown
+    id: configuration_area
+    attributes:
+      label: Configuration area
+      options: [Earnings, Deductions, Pay Groups, Payroll Calendars, Tax Rules, Security, Integration, Reporting, Other]
+    validations:
+      required: true
+  - type: dropdown
+    id: risk
+    attributes:
+      label: Initial risk
+      options: [Low, Medium, High, Critical]
+    validations:
+      required: true
+  - type: input
+    id: owner_role
+    attributes:
+      label: Owner role
+    validations:
+      required: true
+  - type: input
+    id: requested_date
+    attributes:
+      label: Requested date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: testing
+    attributes:
+      label: Testing and evidence plan
+      description: Identify test scope, authorized environment, evidence owner, and acceptance criteria.
+    validations:
+      required: true
+  - type: textarea
+    id: rollback
+    attributes:
+      label: Rollback plan
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Submission confirmations
+      options:
+        - label: The request contains no real employee or confidential payroll information.
+          required: true
+        - label: Proposed or simulated statements are clearly distinguished from live configuration.
+          required: true
+

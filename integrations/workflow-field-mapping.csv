@@ -1,0 +1,14 @@
+canonical_field,repository_artifact,external_system_field,direction,required,validation_rule,classification,owner_role
+change_id,change-management/change-log.xlsx,key_or_ticket_id,Bidirectional,Yes,PCR-YYYY-NNN,Internal,Payroll Change Coordinator
+business_reason,change-management/change-request-template.md,description,Inbound,Yes,Nonblank text,Internal,Business Requester
+configuration_area,change-management/change-log.xlsx,category,Bidirectional,Yes,Controlled configuration-area value,Internal,Payroll Change Coordinator
+risk,change-management/change-impact-assessment.md,risk_rating,Bidirectional,Yes,Low Medium High or Critical,Internal,Risk Reviewer
+owner_role,change-management/change-log.xlsx,assignee_role,Bidirectional,Yes,Authorized role reference,Internal,Payroll Change Coordinator
+status,change-management/change-log.xlsx,workflow_status,Bidirectional,Yes,Approved lifecycle status,Internal,Payroll Change Coordinator
+approval_reference,business-processes/approval-matrix.xlsx,approval_record_id,Inbound,Conditional,Stable immutable reference,Restricted,Approval Coordinator
+test_id,validation-testing/test-cases.xlsx,test_case_id,Bidirectional,Conditional,Unique TC-domain-NNN,Internal,Test Lead
+defect_id,validation-testing/defect-tracking.xlsx,defect_id,Bidirectional,Conditional,Unique DEF-YYYY-NNN,Internal,Defect Owner
+evidence_id,reports/evidence-index.xlsx,evidence_record_id,Bidirectional,Conditional,Unique evidence identifier,Restricted,Evidence Owner
+implementation_date,change-management/change-log.xlsx,implementation_timestamp,Inbound,Conditional,ISO date or timestamp,Restricted,Implementation Owner
+closure_date,change-management/change-log.xlsx,closed_timestamp,Inbound,Conditional,ISO date or timestamp,Internal,Payroll Change Coordinator
+

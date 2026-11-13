@@ -74,9 +74,12 @@ The diagram represents the proposed lifecycle. It is not an implemented Workday 
 | Change management | [Change request template](change-management/change-request-template.md), [fictional completed request](change-management/example-change-request-pcr-2027-001.md), [approval workflow](change-management/change-approval-workflow.md), [impact assessment](change-management/change-impact-assessment.md), [rollback procedure](change-management/rollback-procedure.md), and [change log](change-management/change-log.xlsx) |
 | Business processes | [Payroll change process](business-processes/payroll-change-process.md), [process flow](business-processes/process-flow.md), and [approval matrix](business-processes/approval-matrix.xlsx) |
 | Security | [Access-control guidance](security/access-control-guidelines.md), [segregation-of-duties guidance](security/segregation-of-duties.md), and [role-permission matrix](security/role-permission-matrix.xlsx) |
-| Validation | [Test plan](validation-testing/test-plan.md), [24 test cases](validation-testing/test-cases.xlsx), [payroll validation checklist](validation-testing/payroll-validation-checklist.md), and [defect tracker](validation-testing/defect-tracking.xlsx) |
+| Validation | [Test plan](validation-testing/test-plan.md), [24 test cases](validation-testing/test-cases.xlsx), [payroll validation checklist](validation-testing/payroll-validation-checklist.md), [defect tracker](validation-testing/defect-tracking.xlsx), and [authorized-environment execution plan](validation-testing/authorized-environment-execution-plan.md) |
 | Sample data | [Fictional earnings](sample-data/sample-earnings.csv), [deductions](sample-data/sample-deductions.csv), and [payroll calendars](sample-data/sample-payroll-calendar.csv) |
-| Reporting | [Change summary](reports/change-summary-template.xlsx), [payroll audit checklist](reports/payroll-audit-checklist.md), and [project outcomes and metrics](reports/project-outcomes.md) |
+| Reporting | [Change summary](reports/change-summary-template.xlsx), [traceability report](reports/traceability-report.xlsx), [evidence index](reports/evidence-index.xlsx), [operational metrics dashboard](reports/operational-metrics-dashboard.xlsx), [payroll audit checklist](reports/payroll-audit-checklist.md), and [project outcomes and metrics](reports/project-outcomes.md) |
+| Security governance | [Authorized approver register](security/authorized-approver-register.xlsx), proposed role-permission matrix, access guidance, and segregation-of-duties guidance |
+| Workflow integration | [Vendor-neutral integration specification](integrations/workflow-system-integration.md), [field mapping](integrations/workflow-field-mapping.csv), GitHub issue intake, and pull-request controls |
+| Automated QA | [Repository validation script](scripts/validate-repository.ps1) and GitHub Actions workflow for links, CSVs, workbooks, identifiers, references, and closure warnings |
 | Release | [Draft v1.0.0 release notes](RELEASE_NOTES.md) and [screenshot evidence guidance](screenshots/README.md) |
 
 ## Repository map
@@ -93,12 +96,16 @@ payroll-configuration-change-governance/
 |-- validation-testing/    # Test plan, cases, checklist, and defect tracker
 |-- sample-data/           # Fictional CSV records only
 |-- reports/               # Summary, audit, and outcomes artifacts
+|-- integrations/          # Vendor-neutral workflow contract and field mapping
+|-- scripts/               # Automated repository validation
+|-- .github/               # QA workflow, change intake, and pull-request controls
 `-- screenshots/           # Sanitized screenshot guidance; no evidence images currently stored
 ```
 
 ## Tools and formats
 
 - **Git and GitHub:** version control, review history, and release tagging.
+- **GitHub Actions and PowerShell:** dependency-free repository validation on pull requests and `main`.
 - **Markdown and Mermaid:** governance documentation and process diagrams.
 - **Microsoft Excel-compatible workbooks:** logs, approval and security matrices, test cases, defects, and summary reporting.
 - **CSV:** fictional earning, deduction, and payroll-calendar records.
@@ -121,7 +128,10 @@ git status
 git diff --check
 git ls-files
 git log --oneline --decorate -10
+pwsh ./scripts/validate-repository.ps1
 ```
+
+The automated validator checks required paths, local Markdown links, CSV structure and identifiers, Excel package integrity and filters, formula-error tokens, cross-artifact change/test/defect/evidence references, and closure exceptions. Warnings require owner review; errors fail the command and the GitHub Actions job.
 
 ## Assumptions
 
@@ -140,7 +150,7 @@ This repository demonstrates documentation quality and control design. It does n
 - `Not Executed` means no test result is claimed.
 - `Actual` or `Implemented` should be used for live activity only when authorized evidence supports the statement. Workbook examples may use implementation dates solely to demonstrate reporting logic and remain fictional.
 
-The workbooks do not replace a governed system of record, electronic approval platform, evidence repository, access-review system, or jurisdiction-specific professional review.
+The workbooks do not replace a governed system of record, electronic approval platform, evidence repository, access-review system, or jurisdiction-specific professional review. The integration specification is an implementation-ready design only; no external account or Workday tenant is connected.
 
 ## Quality review and release status
 
@@ -148,4 +158,6 @@ The Day 19 review validated the original 35-file package: 25 Markdown files, 6 E
 
 Day 20 added this final README and the `v1.0.0` release notes. All 36 intended release files are tracked, and the documentation, link, repository, and confidentiality-pattern checks completed without errors. The annotated `v1.0.0` tag must reference the commit containing these final files. Publishing the commit, tag, and optional GitHub Release is a separate release-owner action.
 
-See [release notes](RELEASE_NOTES.md) and [project outcomes and metrics](reports/project-outcomes.md) for the release summary, measured results, limitations, and future enhancements.
+The final enhancement package adds automated QA, controlled intake templates, cross-artifact traceability, an approver authority register, evidence metadata governance, authorized-environment execution readiness, workflow-system integration design, and formula-driven operational metrics. The current package contains 47 intended files: 29 Markdown documents, 10 Excel workbooks, 4 CSV datasets, 2 YAML workflow/template files, one PowerShell validator, and `.gitignore`.
+
+See [release notes](RELEASE_NOTES.md) and [project outcomes and metrics](reports/project-outcomes.md) for the release summary, measured results, limitations, and remaining organizational actions.

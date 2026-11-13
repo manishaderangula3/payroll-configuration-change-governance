@@ -1,5 +1,24 @@
 # Release Notes
 
+## Unreleased — Final Governance Enhancements
+
+**Prepared:** `2026-11-13`
+
+**Status:** Ready for manual review and commit
+
+This final project increment adds the controls identified during the simulated outcome review:
+
+- Automated repository QA through PowerShell and GitHub Actions.
+- GitHub issue intake and pull-request traceability controls.
+- Cross-artifact traceability reporting with explicit gap and exception states.
+- Proposed authorized-approver register with effective dates, delegates, authority limits, and recertification dates.
+- Controlled evidence metadata index with classification, access, retention, legal-hold, and review fields.
+- Vendor-neutral workflow-system integration specification and canonical field mapping.
+- Authorized non-production execution plan that preserves the distinction between simulated and live results.
+- Operational metrics dashboard based only on existing fictional repository dates.
+
+No external workflow platform or Workday tenant was connected. No authorized test was executed. The workbooks and integration documents are implementation-ready examples that require organizational validation, approved accounts, and controlled evidence before operational use.
+
 ## v1.0.0
 
 **Prepared:** `2026-11-11`
